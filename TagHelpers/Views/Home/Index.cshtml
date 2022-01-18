@@ -1,0 +1,19 @@
+﻿
+@using TagHelpers.Models
+@model DayTimeViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<form method="post">
+    <div>
+        <div>
+            <label asp-for="Period">Время суток</label>
+            <select asp-for="Period" asp-items="Html.GetEnumSelectList<DayTime>()"></select>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>

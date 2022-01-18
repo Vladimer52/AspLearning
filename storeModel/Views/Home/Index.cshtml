@@ -1,0 +1,28 @@
+﻿@using storeModel.Models;
+@using storeModel.ViewModels;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form class="form-inline">
+    <label>Выберете компанию</label>
+    <select name="companyId" class="form-control">
+        @foreach(CompanyModel comp in Model.Companies)
+        {
+            <option value="@comp.Id">@comp.Name</option>
+        }
+    </select>
+    <input type="submit" />
+</form>
+<br />
+<table class="table">
+    @foreach(Laptop l in Model.Laptops){
+        <tr>
+            <td>@l.Name</td>
+            <td>@l.Price</td>
+            <td>@l.Company?.Name</td>
+        </tr>
+    }
+</table>
+

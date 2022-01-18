@@ -1,0 +1,52 @@
+﻿
+@model TagHelpers.Models.Product
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Create" asp-controller="Home" asp-antiforgery=true>
+    <div>
+        <div>
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="Price"></label>
+            <input asp-for="Price" />
+        </div>
+        <div>
+            <label asp-for="CompanyId"/>
+            <select asp-for="CompanyId" asp-items="ViewBag.Companies"></select>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+   </div>
+</form>
+
+
+@*<a asp-controller="Home" asp-action="Contacts" asp->Контакты</a> 
+<a asp-controller="Home" asp-action="AddUser" asp-all-route-data='new Dictionary<string, string>{ {"Id", "5"}, {"Name", "Tom"}, {"Age", "18"}}'>Item5</a>*@
+
+@*asp-controller: указывает на контроллер, которому предназначен запрос
+
+asp-action: указывает на действие контроллера
+
+asp-area: указывает на действие область, в которой расположен контроллер или страница RazorPage (если они находятся в отдельной области)
+
+asp-page: указывает на RazorPage, которая будет обрабатывать запрос
+
+asp-page-handler: указывает на обработчик страницы RazorPage, которая будет применяться для обработки запроса
+
+asp-host: указывает на домен сайта
+
+asp-protocol: определяет протокол (http или https)
+
+asp-route: указывает на название маршрута
+
+asp-all-route-data: устанавливает набор значений для параметров
+
+asp-route-[название параметра]: определяет значение для определенного параметра
+
+asp-fragment: определяет ту часть хэш-ссылки, которая идет после символа решетки #. Например, "paragraph2" в ссылке "http://mysite.com/#paragraph2"*@
+

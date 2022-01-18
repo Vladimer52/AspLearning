@@ -1,0 +1,36 @@
+﻿@model SortApp.Models.UserListViewModel
+ 
+@{
+    ViewBag.Title = "Каталог пользователей";
+}
+ 
+<h2>Каталог пользователей</h2>
+ 
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Имя: </label>
+        <input name="name" class="form-control" />
+ 
+        <label class="control-label">Компания: </label>
+        <select name="company" asp-items="Model.Companies" class="form-control"></select>
+ 
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
+ 
+<table class="table table-striped">
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Компания</th>
+    </tr>
+ 
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Company.Name</td>
+        </tr>
+    }
+</table>

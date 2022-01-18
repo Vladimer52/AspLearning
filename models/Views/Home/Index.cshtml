@@ -1,0 +1,15 @@
+﻿@using models.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    @foreach(Phone p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Company?.Name</td>
+        </tr>
+    }
+</table>
